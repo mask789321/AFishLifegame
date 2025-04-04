@@ -51,10 +51,9 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
     }
 
-    public void ToMainMenu()
-    {
+    public void ToStartScreen() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Start Screen");
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void Quit()
