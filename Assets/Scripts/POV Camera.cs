@@ -4,42 +4,35 @@ using UnityEngine;
 
 public class POVCamera : MonoBehaviour
 {
-    public Transform player;
-    public float mouseSensitivity=2f;
-    float cameraVerticalRotation=0.25f;
-    bool lockedCursor=true;
+    public float sensX;
+    public float sensY;
+
+    public Transform orientation;
+
+    float xRotation;
+    float yRotation;
+
 
     // hide cursor
-    void Start()
+    private void Start()
     {
-        Cursor.visible=false;
-        Cursor.lockState=CursorLockMode.Locked;
-
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Mouse Input
-    void Update()
+    private void Update()
     {
-        float inputX= Input.GetAxis("Mouse X")*mouseSensitivity;
-        float inputY= Input.GetAxis("Mouse Y")*mouseSensitivity;
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-        cameraVerticalRotation-=inputY;
-        cameraVerticalRotation=Mathf.Clamp(cameraVerticalRotation,-90f,90f);
+            yRotation += mouseX;
+            xRotation -= mouseY;
 
-        transform.localEulerAngles=Vector3.right * cameraVerticalRotation;
-        player.Rotate(Vector3.up * inputX);
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.rotation = Quaternion.Euler(0f, yRotation, 0f);
+        }
     }
 }
-/*public class SetClipping Planes: MonoBehaviour
-{ 
-    public Camera mainCamera;
-    public float nearClipPlane = 0.1f;
-    public float farClipPlane = 100f;
-   
-    void Start()
-    {
-        mainCamera.nearClipPlane = nearClipPlane;
-        mainCamera.farClipPlane = farClipPlane;
-    }
-
-}*/
