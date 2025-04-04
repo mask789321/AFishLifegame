@@ -8,10 +8,14 @@ public class POVCamera : MonoBehaviour
     public float mouseSensitivity=2f;
     float cameraVerticalRotation=0f;
 
+    bool lockedCursor=true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible=false;
+        Cursor.lockState=CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
@@ -21,9 +25,8 @@ public class POVCamera : MonoBehaviour
         float inputY= Input.GetAxis("Mouse Y")*mouseSensitivity;
         cameraVerticalRotation-=inputY;
         cameraVerticalRotation=Mathf.Clamp(cameraVerticalRotation,-90f,90f);
-        
-        transform.localEulerAngles=Vector3.right * cameraVerticalRotation;
-        player.Rotate(Vector3.up*inputX);
 
+        transform.localEulerAngles=Vector3.right * cameraVerticalRotation;
+        player.Rotate(Vector3.up * inputX);
     }
 }
