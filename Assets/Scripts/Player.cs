@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     float horizontalInput;
     float verticalInput;
+    float floatingInput;
 
     Vector3 moveDirection;
 
@@ -38,11 +39,12 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        floatingInput = Input.GetAxisRaw("Float");
     }
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection = (orientation.forward * verticalInput * Time.deltaTime) + (orientation.right * horizontalInput * Time.deltaTime) + (orientation.up * floatingInput * Time.deltaTime);
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 5f, ForceMode.Force);
     }
