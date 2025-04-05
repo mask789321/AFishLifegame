@@ -6,6 +6,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
+    //public float forwardSpeed = 9f, strafeSpeed = 9f, floatSpeed = 6f;
+    //private float activeForwardSpeed, activeStrafeSpeed, activeFloatSpeed;
+
 
     public Transform orientation;
 
@@ -25,9 +28,17 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         MyInput();
+        SpeedControl();
+        /*activeForwardSpeed = Input.GetAxisRaw("Vertical") * forwardSpeed;
+        activeStrafeSpeed = Input.GetAxisRaw("Horizontal") * strafeSpeed;
+        activeFloatSpeed = Input.GetAxisRaw("Float") * floatSpeed;
+
+        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
+        transform.position += transform.right * activeStrafeSpeed * Time.deltaTime;
+        transform.position += transform.up * activeFloatSpeed * Time.deltaTime;*/
     }
 
     private void FixedUpdate()
@@ -47,5 +58,16 @@ public class Player : MonoBehaviour
         moveDirection = (orientation.forward * verticalInput * Time.deltaTime) + (orientation.right * horizontalInput * Time.deltaTime) + (orientation.up * floatingInput * Time.deltaTime);
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 5f, ForceMode.Force);
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if(flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
     }
 }
