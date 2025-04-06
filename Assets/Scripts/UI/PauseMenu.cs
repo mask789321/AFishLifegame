@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
