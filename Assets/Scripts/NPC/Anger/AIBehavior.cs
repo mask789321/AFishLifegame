@@ -13,6 +13,8 @@ public class AIBehavior : MonoBehaviour
     private Transform player;
     public float enemySight = 5;
     private int CurrentWaypoint;
+
+    public GameOver gameOver;
     //private PatrolPath path;
     float timeAtWaypoint = 0;
     [SerializeField] float RequiredWaypointTime = 5f;
@@ -64,8 +66,9 @@ public class AIBehavior : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Player controller = collision.collider.GetComponent<Player>();
-        
+        //gameOver.isPaused = true;
         GameOverScreen.SetActive(true);
+
         //Debug.Log("Enemy Hit Sum'");
 
         if (controller != null)

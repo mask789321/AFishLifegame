@@ -8,6 +8,8 @@ using UnityEngine.Events;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject Pausemenu;
+    [SerializeField] GameObject GameOverScreen;
+
     bool isPaused;
 
     // Start is called before the first frame update
@@ -33,6 +35,11 @@ public class PauseMenu : MonoBehaviour
         }
 
         if (isPaused == true && Pausemenu != null)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (GameOverScreen.activeInHierarchy == true)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

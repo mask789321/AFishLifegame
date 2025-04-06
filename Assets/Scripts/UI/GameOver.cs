@@ -11,18 +11,26 @@ public class GameOver : MonoBehaviour
     //[SerializeField] GameObject CreditPanel;
 
 
-    private void Start()
+    void Start()
     {
         GameOverScreen.SetActive(false);
     }
 
-    private void Update()
+    void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Tab))
+        if (GameOverScreen.activeInHierarchy == true)
         {
-            test();
-            CreditPanel.SetActive(false);
-        }*/
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+
+        }
+        
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     void test()
@@ -41,7 +49,7 @@ public class GameOver : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Start Screen");
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void Quit()

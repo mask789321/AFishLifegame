@@ -957,7 +957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1097538111
 Transform:
   m_ObjectHideFlags: 0
@@ -1058,7 +1058,7 @@ Transform:
   m_GameObject: {fileID: 1161128888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1756,6 +1756,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5345467715755446748, guid: e990bdc7e211e11448a22a5149803f45, type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 34908523}
     - target: {fileID: 7336413727109089536, guid: e990bdc7e211e11448a22a5149803f45, type: 3}
       propertyPath: m_Name
       value: Pause
@@ -2017,10 +2021,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6556961970955855267, guid: 960a983dfc778104d99ba3bc33b1d595, type: 3}
-      propertyPath: GameOverScreen
-      value: 
-      objectReference: {fileID: 34908523}
     - target: {fileID: 6592570075612344269, guid: 960a983dfc778104d99ba3bc33b1d595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2116,6 +2116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverScreen: {fileID: 34908523}
   enemySight: 8.6
+  gameOver: {fileID: 950874051}
   RequiredWaypointTime: 5
 --- !u!65 &4581945181469049323
 BoxCollider:
@@ -2228,6 +2229,6 @@ SceneRoots:
   - {fileID: 1131869929}
   - {fileID: 1161128889}
   - {fileID: 945845656}
-  - {fileID: 156965626}
   - {fileID: 4525514674276169582}
   - {fileID: 1019714322}
+  - {fileID: 156965626}
