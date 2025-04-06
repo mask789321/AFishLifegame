@@ -9,7 +9,7 @@ public class AIBehavior : MonoBehaviour
     //public GameObject patrolPathObj;
     private NavMeshAgent nav;
     private Vector2 moveInput;
-    
+    public GameObject GameOverScreen;
     private Transform player;
     public float enemySight = 5;
     private int CurrentWaypoint;
@@ -26,6 +26,7 @@ public class AIBehavior : MonoBehaviour
         GameObject playerObject = GameObject.FindWithTag("Player");
         player = playerObject.transform;
         GameObject patrolPathObj = GameObject.FindWithTag("Waypoints");
+        GameOverScreen.SetActive(false);
         //path = patrolPathObj.GetComponent<PatrolPath>();
     }
 
@@ -63,6 +64,8 @@ public class AIBehavior : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Player controller = collision.collider.GetComponent<Player>();
+        
+        GameOverScreen.SetActive(true);
         //Debug.Log("Enemy Hit Sum'");
 
         if (controller != null)
@@ -72,13 +75,13 @@ public class AIBehavior : MonoBehaviour
         }
     }
 
-            private void OnDrawGizmosSelected()
+    /*        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(this.transform.position, enemySight);
         }
 
-    /*void Patrol()
+    void Patrol()
     {
         MoveTo(path.GetWaypoint(CurrentWaypoint));
         if (AtWaypoint())

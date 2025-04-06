@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
+    public GameObject GameOverScreen;
+
     public void Start()
     {
         Time.timeScale = 0f;
+        GameOverScreen.SetActive(false);
     }
 
     public void GameStart()
@@ -18,7 +21,7 @@ public class StartScreen : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("GET DA FUCK OUT");
+        Debug.Log("Game ended.");
     }
 
     public void Restart()
