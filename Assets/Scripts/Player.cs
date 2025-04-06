@@ -6,9 +6,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    //public float forwardSpeed = 9f, strafeSpeed = 9f, floatSpeed = 6f;
-    //private float activeForwardSpeed, activeStrafeSpeed, activeFloatSpeed;
-
 
     public Transform orientation;
 
@@ -32,13 +29,6 @@ public class Player : MonoBehaviour
     {
         MyInput();
         SpeedControl();
-        /*activeForwardSpeed = Input.GetAxisRaw("Vertical") * forwardSpeed;
-        activeStrafeSpeed = Input.GetAxisRaw("Horizontal") * strafeSpeed;
-        activeFloatSpeed = Input.GetAxisRaw("Float") * floatSpeed;
-
-        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
-        transform.position += transform.right * activeStrafeSpeed * Time.deltaTime;
-        transform.position += transform.up * activeFloatSpeed * Time.deltaTime;*/
     }
 
     static public bool dialogue = false;

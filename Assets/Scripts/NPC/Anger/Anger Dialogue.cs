@@ -7,8 +7,12 @@ public class AngerDialogue : MonoBehaviour
 {
     public GameObject dialogue_template;
     public GameObject canvas;
-    bool player_detection = false;
+    bool player_detection;
 
+    private void Start()
+    {
+        player_detection = false;
+    }
     void Update()
     {
         if (player_detection && Input.GetKeyDown(KeyCode.F) && !Player.dialogue)
@@ -31,11 +35,13 @@ public class AngerDialogue : MonoBehaviour
         if (other.name=="PlayerBody")
         {
             player_detection = true;
+            dialogue_template.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         player_detection = false;
+        dialogue_template.SetActive(false);
     }
 }
