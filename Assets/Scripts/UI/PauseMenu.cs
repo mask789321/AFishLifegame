@@ -8,13 +8,12 @@ using UnityEngine.Events;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject Pausemenu;
-    public bool isPaused;
+    bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
-        Pausemenu.SetActive(false);
-        //Time.timeScale = 0;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -22,14 +21,25 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isPaused)
-            {
-                ResumeGame();
-            }
-            else
+            if(!isPaused)
             {
                 PauseGame();
             }
+            else
+            {
+                ResumeGame();
+            }
+        }
+
+        if (isPaused == true && Pausemenu != null)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
@@ -38,8 +48,8 @@ public class PauseMenu : MonoBehaviour
         Pausemenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
     }
 
     public void ResumeGame()
@@ -54,6 +64,12 @@ public class PauseMenu : MonoBehaviour
     public void ToStartScreen() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartScreen");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void Quit()
