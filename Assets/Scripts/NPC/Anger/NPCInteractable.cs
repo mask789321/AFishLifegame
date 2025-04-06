@@ -12,7 +12,7 @@ public class NPCInteractable : MonoBehaviour
     }
     public void Interact()
     {
-        Debug.Log("Check this shit out");
+        Debug.Log("Anger speaks.");
         FishUI.SetActive(true);
         StartCoroutine(SetFalse());
     }
