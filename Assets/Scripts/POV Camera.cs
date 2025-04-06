@@ -23,6 +23,21 @@ public class POVCamera : MonoBehaviour
     private void Update()
     {
         {
+            if (!Player.dialogue)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                MyInput();
+
+                transform.localRotation = Quaternion.Euler(xRotation, 0,0);
+                transform.rotation = Quaternion.Euler(0, yRotation, 0);
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                
+            }
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
             float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
@@ -34,5 +49,14 @@ public class POVCamera : MonoBehaviour
             transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             orientation.rotation = Quaternion.Euler(0f, yRotation, 0f);
         }
+    }
+
+    private void MyInput()
+    {
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        yRotation += mouseX;
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
     }
 }

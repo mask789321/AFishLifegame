@@ -41,9 +41,14 @@ public class Player : MonoBehaviour
         transform.position += transform.up * activeFloatSpeed * Time.deltaTime;*/
     }
 
+    static public bool dialogue = false;
+
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!dialogue)
+        {
+            MovePlayer();
+        }
     }
 
     private void MyInput()
