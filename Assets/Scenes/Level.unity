@@ -1835,6 +1835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e372936b8d1f4d4095f134c658eb630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FishUI: {fileID: 194275341}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
