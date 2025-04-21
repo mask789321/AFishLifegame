@@ -35,5 +35,9 @@ public class StartScreen : MonoBehaviour
         SceneManager.LoadScene("StartScreen");
     }
 
-
+    public void ToCredits()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("CreditsScreen");
+    }
 }
