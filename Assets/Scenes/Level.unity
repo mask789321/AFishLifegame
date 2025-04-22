@@ -71754,6 +71754,7 @@ GameObject:
   - component: {fileID: 2118160791}
   - component: {fileID: 2118160790}
   - component: {fileID: 2118160789}
+  - component: {fileID: 2118160794}
   m_Layer: 0
   m_Name: WinTrigger
   m_TagString: Untagged
@@ -71838,7 +71839,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -71909,6 +71910,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2118160794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118160788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb4c81b314dee74eaf6ba72dbd523de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2120823146
 PrefabInstance:
   m_ObjectHideFlags: 0
