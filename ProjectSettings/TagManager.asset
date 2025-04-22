@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Waypoints
+  - NPC
+  - Denial
+  - Anger
+  - Depression
+  - Acceptance
+  - Bargaining
   layers:
   - Default
   - TransparentFX
