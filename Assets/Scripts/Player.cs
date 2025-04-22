@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
+
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -16,12 +18,21 @@ public class Player : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+    public GameObject FishUI;
+    public GameObject InteractIcon;
+    private bool isTalking;
+
+    private bool dialogueOver;
+    public GameObject enemyAI;
+    AIBehavior enemyAI_script;
+    NPC_Behaviour interactibleNPC;
 
     private void Start()
     {
         {
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
+            enemyAI_script = enemyAI.GetComponent<AIBehavior>();
         }
     }
 
@@ -29,6 +40,11 @@ public class Player : MonoBehaviour
     {
         MyInput();
         SpeedControl();
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            NPCInteract();
+        }
     }
 
     static public bool dialogue = false;
@@ -64,5 +80,46 @@ public class Player : MonoBehaviour
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+    }
+
+    void NPCInteract()
+    {
+        if (!isTalking && !interactibleNPC.DialogueOver)
+        {
+            Debug.Log("Anger speaks.");
+            interactibleNPC.FishDialogue.SetActive(true);
+            //FishUI.SetActive(true);
+            InteractIcon.SetActive(false);
+            isTalking = true;
+        } 
+        else
+        {
+            isTalking = false;
+            FishUI.SetActive(false);
+            //dialogueOver = true;
+            interactibleNPC.DialogueOver = true;
+            //interactibleNPC.enabled = false;
+            //enemyAI_script.enabled = true;
+        }
+        
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+        if (other != null && other.tag == "NPC")
+        {
+            NPC_Behaviour npc = other.GetComponent<NPC_Behaviour>();
+            interactibleNPC = npc;
+            if (npc.DialogueOver == false && isTalking == false)
+            {
+                InteractIcon.SetActive(true);
+            }   
+            else 
+            {
+                InteractIcon.SetActive(false);
+            }
+            //npc.FishDialogue.SetActive(true);
+        } 
     }
 }

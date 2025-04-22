@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
-    public GameObject GameOverScreen;
+    //public GameObject GameOverScreen;
+    public GameObject CreditsScreen;
+    public GameObject startMenu;
 
     public void Start()
     {
         Time.timeScale = 0f;
-        GameOverScreen.SetActive(false);
+        //GameOverScreen.SetActive(false);
     }
 
     public void GameStart()
@@ -38,6 +40,8 @@ public class StartScreen : MonoBehaviour
     public void ToCredits()
     {
         Time.timeScale = 1f;
+        CreditsScreen.SetActive(true);
+        startMenu.SetActive(false);    
         SceneManager.LoadScene("CreditsScreen");
     }
 }

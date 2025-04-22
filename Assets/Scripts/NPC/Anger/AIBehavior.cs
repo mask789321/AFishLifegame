@@ -11,14 +11,16 @@ public class AIBehavior : MonoBehaviour
     private Vector2 moveInput;
     public GameObject GameOverScreen;
     private Transform player;
+    public float speed = 5;
     public float enemySight = 5;
     private int CurrentWaypoint;
 
     public GameOver gameOver;
-    //private PatrolPath path;
+    private PatrolPath path;
     float timeAtWaypoint = 0;
     [SerializeField] float RequiredWaypointTime = 5f;
     private float timeSinceDetected = 4;
+    public GameObject patrolPathObj;
     private bool chaseState = false;
     //public GameController gcon;
 
@@ -27,9 +29,9 @@ public class AIBehavior : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         GameObject playerObject = GameObject.FindWithTag("Player");
         player = playerObject.transform;
-        GameObject patrolPathObj = GameObject.FindWithTag("Waypoints");
+        //GameObject patrolPathObj = GameObject.FindWithTag("Waypoints");
         GameOverScreen.SetActive(false);
-        //path = patrolPathObj.GetComponent<PatrolPath>();
+        path = patrolPathObj.GetComponent<PatrolPath>();
     }
 
 
@@ -50,7 +52,7 @@ public class AIBehavior : MonoBehaviour
             nav.isStopped = true;
         } else 
         {
-            //Patrol();
+            Patrol();
             //Debug.Log("Patrolling");
         }
 
@@ -78,7 +80,7 @@ public class AIBehavior : MonoBehaviour
         }
     }
 
-    /*        private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(this.transform.position, enemySight);
@@ -109,7 +111,7 @@ public class AIBehavior : MonoBehaviour
         {
             float distanceToWaypoint = Vector3.Distance(transform.position, path.GetWaypoint(CurrentWaypoint));
             return distanceToWaypoint < .1f;
-        }*/
+        }
     
 }
 
