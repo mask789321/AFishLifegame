@@ -19,6 +19,7 @@ public class StartScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Level");
         SoundManager.Instance.musicSource.Stop();
+        SoundManager.Instance.PlayMusic("Ambience");
     }
 
     public void QuitGame()

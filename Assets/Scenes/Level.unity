@@ -15047,7 +15047,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4256036254219538, guid: 6cb9eb6b0730a724eb39c4e25c66dbcd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4581945181469049319}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1698920624316846, guid: 6cb9eb6b0730a724eb39c4e25c66dbcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 884482339}
   m_SourcePrefab: {fileID: 100100000, guid: 6cb9eb6b0730a724eb39c4e25c66dbcd, type: 3}
 --- !u!1001 &422269373
 PrefabInstance:
@@ -30520,6 +30523,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4197682149160002, guid: 4b1deebc44f447b449a2ab524f21462f, type: 3}
   m_PrefabInstance: {fileID: 882118525}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &884482338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1698920624316846, guid: 6cb9eb6b0730a724eb39c4e25c66dbcd, type: 3}
+  m_PrefabInstance: {fileID: 420263072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &884482339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884482338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8aa9027fae6fc748b92ca67a5868816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverScreen: {fileID: 34908523}
+  speed: 5
+  enemySight: 5
+  gameOver: {fileID: 0}
+  RequiredWaypointTime: 5
+  patrolPathObj: {fileID: 0}
 --- !u!4 &884528275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4197682149160002, guid: 4b1deebc44f447b449a2ab524f21462f, type: 3}
@@ -72971,6 +72997,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 378939976}
     m_Modifications:
+    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 246e56f7e49c77846b3c16244ac1275a, type: 2}
+    - target: {fileID: 6704273346573430505, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8295922049011600888, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
     - target: {fileID: -8679921383154817045, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.625
@@ -73043,18 +73081,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Anger
       objectReference: {fileID: 0}
-    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 246e56f7e49c77846b3c16244ac1275a, type: 2}
-    - target: {fileID: 6704273346573430505, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -8295922049011600888, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2654713335656134247, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
@@ -73135,7 +73161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3197849802030068932, guid: 960a983dfc778104d99ba3bc33b1d595, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3336572359853070255, guid: 960a983dfc778104d99ba3bc33b1d595, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -73377,7 +73403,6 @@ SceneRoots:
   - {fileID: 156965626}
   - {fileID: 1964017986}
   - {fileID: 1510090536397543558}
-  - {fileID: 2790764262479349334}
   - {fileID: 1161128889}
   - {fileID: 945845656}
   - {fileID: 4525514674276169582}
@@ -73390,3 +73415,4 @@ SceneRoots:
   - {fileID: 228128017}
   - {fileID: 2118160793}
   - {fileID: 4724920}
+  - {fileID: 2790764262479349334}
