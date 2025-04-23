@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCInteractable : MonoBehaviour
 {
     public GameObject FishUI;
-
+    public int NumberOfDialogueLines;
     public void Start()
     {
         FishUI.SetActive(false);
@@ -15,6 +15,7 @@ public class NPCInteractable : MonoBehaviour
         Debug.Log("Anger speaks.");
         FishUI.SetActive(true);
         StartCoroutine(SetFalse());
+        
     }
 
     IEnumerator SetFalse()

@@ -16,4 +16,9 @@ public class WinScreen : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }

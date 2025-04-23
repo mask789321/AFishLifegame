@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
+
 //using Unity.PlasticSCM.Editor.WebApi;
 
 //using UnityEditor.Experimental.GraphView;
@@ -26,6 +28,9 @@ public class Player : MonoBehaviour
     public GameObject enemyAI;
     AIBehavior enemyAI_script;
     NPC_Behaviour interactibleNPC;
+    public GameObject winScreen;
+    public int CurrentDialogueLine = 0;
+    
 
     private void Start()
     {
@@ -90,15 +95,19 @@ public class Player : MonoBehaviour
             interactibleNPC.FishDialogue.SetActive(true);
             //FishUI.SetActive(true);
             InteractIcon.SetActive(false);
-            isTalking = true;
+            //isTalking = true;
+
+            //Time.timeScale = 0f;
         } 
         else
         {
-            isTalking = false;
-            FishUI.SetActive(false);
-            //dialogueOver = true;
+            //Time.timeScale = 1f;
+            //isTalking = false;
             interactibleNPC.DialogueOver = true;
-            interactibleNPC.FishDialogue.SetActive(false);
+            //interactibleNPC.FishDialogue.SetActive(false);
+            //FishUI.SetActive(false);
+            //dialogueOver = true;
+            
             //interactibleNPC.GetComponentInParent<AIBehavior>().enabled = true;
             //interactibleNPC.enabled = false;
             //enemyAI_script.enabled = true;
@@ -123,5 +132,15 @@ public class Player : MonoBehaviour
             }
             //npc.FishDialogue.SetActive(true);
         } 
+
+        if (other != null && other.tag == "Win")
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            winScreen.SetActive(true);
+            
+            
+            Time.timeScale = 0f;
+        }
     }
 }
