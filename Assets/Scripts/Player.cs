@@ -98,6 +98,8 @@ public class Player : MonoBehaviour
             FishUI.SetActive(false);
             //dialogueOver = true;
             interactibleNPC.DialogueOver = true;
+            interactibleNPC.FishDialogue.SetActive(false);
+            //interactibleNPC.GetComponentInParent<AIBehavior>().enabled = true;
             //interactibleNPC.enabled = false;
             //enemyAI_script.enabled = true;
         }

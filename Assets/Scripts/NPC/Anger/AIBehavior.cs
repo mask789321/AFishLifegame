@@ -48,8 +48,12 @@ public class AIBehavior : MonoBehaviour
             chaseState = true;
             SoundManager.Instance.musicSource.Stop();
             SoundManager.Instance.PlayMusic("Anger");
+            //Vector3 direction = (player.position - transform.position).normalized;
+            //rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+            
             //Debug.Log("Player Detected");
-            //MoveTo(player.position);
+            MoveTo(player.position);
+            transform.LookAt(player);
         } else if (timeSinceDetected < 3)
         {
             timeSinceDetected += Time.deltaTime;
@@ -70,9 +74,9 @@ public class AIBehavior : MonoBehaviour
     {
         /*GetComponent<NavMeshAgent>().destination = destination;
         nav.isStopped = false;*/
-        Vector3 direction = (player.position - transform.position).normalized;
+        Vector3 direction = (destination - transform.position).normalized;
         rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-        transform.LookAt(player);
+        //transform.LookAt(player);
     }
 
     void OnCollisionEnter(Collision collision)

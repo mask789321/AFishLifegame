@@ -637,7 +637,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963459897}
         m_TargetAssemblyTypeName: StartScreen, Assembly-CSharp
-        m_MethodName: ToStart
+        m_MethodName: ToStartScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
