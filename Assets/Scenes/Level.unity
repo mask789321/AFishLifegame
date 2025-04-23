@@ -21536,9 +21536,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1754202492}
   lines:
-  - Tres means 3 but
-  - Uno Means 1
-  - Gosh Darn it
+  - 'What, who are you? '
+  - 'I''m just waiting here for someone. '
+  - '*Looks away from you*'
+  - I'm sure they'll be here.
+  - I just have to wait a little longer.
+  - 'Yeah, they''ll be here soon. '
   textSpeed: 0
 --- !u!114 &592910711
 MonoBehaviour:
@@ -34231,11 +34234,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 46529674}
-  - {fileID: 2059641897}
+  - {fileID: 592910709}
+  - {fileID: 1367719156}
   - {fileID: 1708487737}
   - {fileID: 1282961923}
-  - {fileID: 1367719156}
-  - {fileID: 592910709}
+  - {fileID: 2059641897}
   - {fileID: 977727400}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46018,9 +46021,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1214972233}
   lines:
-  - Tres means 3 but
-  - Uno Means 1
-  - Gosh Darn it
+  - "\u2026"
+  - "\u2026"
+  - "\u2026I'm tired."
+  - "\u2026You scared me. "
+  - 'What are you doing here? '
+  - 'You shouldn''t be here. '
+  - 'No one has swam here in years. '
+  - 'If you think you will find anyone here, you are mistaken. '
+  - 'Not a single other fish. '
+  - 'It has just been me. '
+  - 'For years. '
+  - 'Alone in this darkness. '
+  - 'I''ve lost everything. '
+  - 'Everyone I''ve known. '
+  - 'I have no one. '
+  - "\u2026"
   textSpeed: 0
 --- !u!114 &1282961925
 MonoBehaviour:
@@ -48951,9 +48967,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1572930809}
   lines:
-  - Tres means 3 but
-  - Uno Means 1
-  - Gosh Darn it
+  - Looking for someone? Are you lost?
+  - Come a little closer, I think I can help you out.
+  - '*Smiles*'
+  - I'll devour you!
   textSpeed: 0
 --- !u!114 &1367719158
 MonoBehaviour:
@@ -60722,9 +60739,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 424354248}
   lines:
-  - Tres means 3 but
-  - Uno Means 1
-  - Gosh Darn it
+  - '*murmuring* Oh, bright light, bring me back to my home.'
+  - "\u2026"
+  - Oh, hello there!
+  - You're the first fish I've seen in a while.
+  - Are you a disciple of the light?
+  - The bright light has helped me through these tough times.
+  - "Y\u2019know, it could be this isn't a well used area of the ocean "
+  - Yeah! That has to be it!
+  - "You and I, we\u2019re like two sides of the same reef."
+  - We can get out of this, the bright light will save us!
+  - "Are you sure you don\u2019t want to stay?"
+  - "I\u2019ll keep praying, then."
+  - If you change your mind, the bright light will always be above you.
   textSpeed: 0
 --- !u!114 &1708487739
 MonoBehaviour:
@@ -73183,9 +73210,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1973690622}
   lines:
-  - Tres means 3 but
-  - Uno Means 1
-  - Gosh Darn it
+  - 'I am alone '
+  - 'We are alone. '
+  - 'Yet I have grown to overcome this. '
+  - "There\u2019s no need to worry anymore. "
+  - 'This is the natural end of things, our way forward. '
+  - 'Accept this and you can truly move on. '
+  - 'Go further ahead into the depths and leave this fantasy. '
   textSpeed: 0
 --- !u!114 &2059641899
 MonoBehaviour:
