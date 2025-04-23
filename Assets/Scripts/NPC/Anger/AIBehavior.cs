@@ -58,7 +58,7 @@ public class AIBehavior : MonoBehaviour
         {
             timeSinceDetected += Time.deltaTime;
             chaseState = false;
-            nav.isStopped = true;
+            //nav.isStopped = true;
             SoundManager.Instance.musicSource.Stop();
             SoundManager.Instance.PlayMusic("Ambience");
         } else 
@@ -76,7 +76,7 @@ public class AIBehavior : MonoBehaviour
         nav.isStopped = false;*/
         Vector3 direction = (destination - transform.position).normalized;
         rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
-        //transform.LookAt(player);
+        transform.LookAt(destination);
     }
 
     void OnCollisionEnter(Collision collision)

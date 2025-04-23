@@ -96,6 +96,8 @@ public class Player : MonoBehaviour
             interactibleNPC.DialogueOver = true;
             //FishUI.SetActive(true);
             InteractIcon.SetActive(false);
+            interactibleNPC.GetComponentInParent<AIBehavior>().enabled = true;
+            
             //interactibleNPC = null;
             //isTalking = true;
 
