@@ -46,8 +46,7 @@ public class AIBehavior : MonoBehaviour
         {
             timeSinceDetected = 0;
             chaseState = true;
-            SoundManager.Instance.musicSource.Stop();
-            SoundManager.Instance.PlayMusic("Anger");
+
             //Vector3 direction = (player.position - transform.position).normalized;
             //rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
             
@@ -84,6 +83,7 @@ public class AIBehavior : MonoBehaviour
         Player controller = collision.collider.GetComponent<Player>();
         //gameOver.isPaused = true;
         GameOverScreen.SetActive(true);
+        
 
         //Debug.Log("Enemy Hit Sum'");
 
