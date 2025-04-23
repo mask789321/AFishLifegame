@@ -11,10 +11,10 @@ public class ToWinScreen : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         SceneManager.LoadScene("WinScreen");
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {

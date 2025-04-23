@@ -46,7 +46,7 @@ public class AIBehavior : MonoBehaviour
             SoundManager.Instance.musicSource.Stop();
             SoundManager.Instance.PlayMusic("Anger");
             //Debug.Log("Player Detected");
-            MoveTo(player.position);
+            //MoveTo(player.position);
         } else if (timeSinceDetected < 3)
         {
             timeSinceDetected += Time.deltaTime;
