@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 366359856}
+  - component: {fileID: 366359857}
   m_Layer: 0
   m_Name: WinScreen
   m_TagString: Untagged
@@ -154,6 +155,18 @@ Transform:
   - {fileID: 963459893}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366359857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366359855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e809b13ee5bc8d4c8a4db941bfa42c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &457901999
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,8 +826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.8, y: -1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -63.8, y: 67.7}
+  m_SizeDelta: {x: 640.6, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009724043
 MonoBehaviour:
@@ -836,7 +849,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fin
+  m_text: 'As you swim through the ocean, lost and alone.
+
+    Encountering shadows
+    of yourself.
+
+    Through it all, this little fish passed away.
+
+    Even in
+    your darkest hour, your resolve across this journey of great change led you to
+    blossom in the dark.
+
+
+    Fin'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -863,8 +888,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 23.4
+  m_fontSizeBase: 23.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
