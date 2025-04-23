@@ -15,6 +15,8 @@ public class AIBehavior : MonoBehaviour
     public float enemySight = 5;
     private int CurrentWaypoint;
 
+    private Rigidbody rb;
+
     public GameOver gameOver;
     private PatrolPath path;
     float timeAtWaypoint = 0;
@@ -32,6 +34,7 @@ public class AIBehavior : MonoBehaviour
         //GameObject patrolPathObj = GameObject.FindWithTag("Waypoints");
         GameOverScreen.SetActive(false);
         path = patrolPathObj.GetComponent<PatrolPath>();
+        rb = GetComponent<Rigidbody>();
     }
 
 
@@ -65,8 +68,11 @@ public class AIBehavior : MonoBehaviour
 
     public void MoveTo(Vector3 destination)
     {
-        GetComponent<NavMeshAgent>().destination = destination;
-        nav.isStopped = false;
+        /*GetComponent<NavMeshAgent>().destination = destination;
+        nav.isStopped = false;*/
+        Vector3 direction = (player.position - transform.position).normalized;
+        rb.MovePosition(rb.position + direction * speed * Time.fixedDeltaTime);
+        transform.LookAt(player);
     }
 
     void OnCollisionEnter(Collision collision)

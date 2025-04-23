@@ -38,7 +38,7 @@ public class StartScreen : MonoBehaviour
         Time.timeScale = 1f;
         CreditsScreen.SetActive(false);
         startMenu.SetActive(true);
-        //SceneManager.LoadScene("StartScreen");
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void ToCredits()
