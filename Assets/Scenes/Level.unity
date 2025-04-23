@@ -17334,7 +17334,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fin
+  m_text: 'As you swim through the ocean, lost and alone.
+
+    Encountering shadows
+    of yourself.
+
+    Through it all, this little fish passed away.
+
+    Even in
+    your darkest hour, your resolve across this journey of great change led you to
+    blossom in the dark.
+
+
+    Fin'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -77022,6 +77034,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 378939976}
     m_Modifications:
+    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 246e56f7e49c77846b3c16244ac1275a, type: 2}
+    - target: {fileID: 6704273346573430505, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8295922049011600888, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
     - target: {fileID: -8679921383154817045, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.625
@@ -77126,18 +77150,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Anger
       objectReference: {fileID: 0}
-    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1435748732906371039, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 246e56f7e49c77846b3c16244ac1275a, type: 2}
-    - target: {fileID: 6704273346573430505, guid: 62c2d66f6cb70124aa1a81469cc6722d, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -8295922049011600888, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2654713335656134247, guid: 2005983e1a634904fb6dda2ae8b68c5d, type: 3}
