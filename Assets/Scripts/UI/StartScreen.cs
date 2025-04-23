@@ -18,6 +18,7 @@ public class StartScreen : MonoBehaviour
     public void GameStart()
     {
         SceneManager.LoadScene("Level");
+        SoundManager.Instance.musicSource.Stop();
     }
 
     public void QuitGame()
@@ -34,7 +35,9 @@ public class StartScreen : MonoBehaviour
     public void ToStart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("StartScreen");
+        CreditsScreen.SetActive(false);
+        startMenu.SetActive(true);
+        //SceneManager.LoadScene("StartScreen");
     }
 
     public void ToCredits()
@@ -42,6 +45,6 @@ public class StartScreen : MonoBehaviour
         Time.timeScale = 1f;
         CreditsScreen.SetActive(true);
         startMenu.SetActive(false);    
-        SceneManager.LoadScene("CreditsScreen");
+        //SceneManager.LoadScene("CreditsScreen");
     }
 }

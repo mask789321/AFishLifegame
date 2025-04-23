@@ -28,7 +28,7 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic("Acceptance");
+        //PlayMusic("Acceptance");
     }
 
     //finds and plays music track
