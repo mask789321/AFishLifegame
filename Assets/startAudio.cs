@@ -8,7 +8,7 @@ public class startAudio : MonoBehaviour
     void Start()
     {
         //SoundManager.Instance.musicSource.Stop();
-        SoundManager.Instance.PlayMusic("Menu");
+        SoundManager.Instance.PlayMusic("Dialogue");
     }
 
     // Update is called once per frame
