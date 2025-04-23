@@ -58,8 +58,8 @@ public class AIBehavior : MonoBehaviour
             timeSinceDetected += Time.deltaTime;
             chaseState = false;
             //nav.isStopped = true;
-            SoundManager.Instance.musicSource.Stop();
-            SoundManager.Instance.PlayMusic("Ambience");
+            //SoundManager.Instance.musicSource.Stop();
+            //SoundManager.Instance.PlayMusic("Ambience");
         } else 
         {
             Patrol();
