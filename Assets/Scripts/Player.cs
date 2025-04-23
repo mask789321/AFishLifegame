@@ -93,8 +93,10 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Anger speaks.");
             interactibleNPC.FishDialogue.SetActive(true);
+            interactibleNPC.DialogueOver = true;
             //FishUI.SetActive(true);
             InteractIcon.SetActive(false);
+            //interactibleNPC = null;
             //isTalking = true;
 
             //Time.timeScale = 0f;

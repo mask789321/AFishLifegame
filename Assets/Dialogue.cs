@@ -8,12 +8,14 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
+    Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
         Time.timeScale = 0f;
+
         StartCoroutine(TypeLine());
     }
 
@@ -59,6 +62,7 @@ public class Dialogue : MonoBehaviour
             
         } else
         {
+            //player.
             Time.timeScale = 1f;
             gameObject.SetActive(false);
         }
