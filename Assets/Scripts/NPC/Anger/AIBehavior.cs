@@ -43,6 +43,8 @@ public class AIBehavior : MonoBehaviour
         {
             timeSinceDetected = 0;
             chaseState = true;
+            SoundManager.Instance.musicSource.Stop();
+            SoundManager.Instance.PlayMusic("Anger");
             //Debug.Log("Player Detected");
             MoveTo(player.position);
         } else if (timeSinceDetected < 3)
@@ -50,6 +52,8 @@ public class AIBehavior : MonoBehaviour
             timeSinceDetected += Time.deltaTime;
             chaseState = false;
             nav.isStopped = true;
+            SoundManager.Instance.musicSource.Stop();
+            SoundManager.Instance.PlayMusic("Ambience");
         } else 
         {
             Patrol();
